@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/novo-perfil.css">
+  <title>Criar Perfil</title>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Criar novo perfil</h1>
+
+  <div class="profile-preview">
+    <img id="preview" src="/assets/profile/profile1.jpg" alt="Preview">
+  </div>
+
+  <form id="formPerfil">
+    <input type="text" id="nome" placeholder="Nome do perfil" required>
+
+
+<div class="avatars" role="group" aria-label="Seleção de avatar">
+  <button class="avatar-option" data-avatar="/assets/profile/profile1.jpg" type="button" aria-label="Avatar 1">
+    <img src="/assets/profile/profile1.jpg" alt="Avatar 1">
+  </button>
+  <button class="avatar-option" data-avatar="/assets/profile/profile2.png" type="button" aria-label="Avatar 2">
+    <img src="/assets/profile/profile2.png" alt="Avatar 2">
+  </button>
+</div>
+
+<div class="buttons">
+  <button type="submit">Salvar</button>
+  <a href="/index.html" class="cancelar">Cancelar</a>
+</div>
+
+
+  </form>
+</div>
+
+<script src="/Javascript/novo-perfil.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Filme - Cine+</title>
+  <link rel="shortcut icon" href="/assets/img/logo.png">
+  <link rel="stylesheet" href="/style/detalhes.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <!-- Logo -->
+    <a href="/paginas/home.html" class="navbar-logo">
+      <img src="/assets/img/logo.png" alt="Logo Cine+">
+    </a>
+    <button class="back-button" id="backBtn" aria-label="Voltar para home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Voltar</span>
+    </button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-details" id="heroDetails">
+    <!-- Background backdrop -->
+    <div class="hero-backdrop" id="heroBackdrop"></div>
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Conteúdo -->
+    <div class="hero-details-content">
+      <!-- Poster à esquerda -->
+      <div class="details-poster-wrapper">
+        <img id="detailsPoster" class="details-poster" src="" alt="Poster">
+      </div>
+
+      <!-- Informações à direita -->
+      <div class="details-info">
+        <h1 id="detailsTitle" class="details-title"></h1>
+
+        <div class="details-meta">
+          <span class="details-rating" id="detailsRating">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/>
+            </svg>
+            <span id="detailsRatingValue">8.5</span>
+          </span>
+          <span class="details-year" id="detailsYear">2024</span>
+          <span class="details-type" id="detailsType">Filme</span>
+        </div>
+
+        <div class="details-genres" id="detailsGenres"></div>
+
+        <p id="detailsOverview" class="details-overview"></p>
+
+        <!-- Ações -->
+        <div class="details-actions">
+          <button class="details-btn details-btn-play" id="detailsPlayBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21"/>
+            </svg>
+            <span>Assistir Agora</span>
+          </button>
+          <button class="details-btn details-btn-list" id="detailsListBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Minha Lista</span>
+          </button>
+        </div>
+
+        <!-- Mais informações -->
+        <div class="details-extra">
+          <div class="detail-item">
+            <span class="detail-label">Diretor:</span>
+            <span id="detailsDirector" class="detail-value">-</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Elenco:</span>
+            <span id="detailsCast" class="detail-value">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAILER SECTION -->
+  <section class="trailer-section" id="trailerSection">
+    <div class="trailer-container">
+      <h2>Trailer</h2>
+      <div class="video-wrapper">
+        <iframe id="trailerFrame" width="100%" height="500" frameborder="0" 
+          allow="autoplay; encrypted-media" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMILARES -->
+  <section class="similares-section" id="similaresSectionContainer"></section>
+
+  <script src="/Javascript/detalhes.js"></script>
+</body>
+</html>

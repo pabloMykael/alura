@@ -1,0 +1,23 @@
+﻿:root {
+  /* Fonts */
+  --font-primary: 
+\Arial\', sans-serif;
+
+  /* Colors */
+  --color-dark: #0a0a0a;
+  --color-light: #f5eded;
+  --color-primary: #e0bd1d;
+  --color-gray: #0099ff;
+
+  /* Spacing */
+  --spacing-xl: 2rem;
+  --spacing-lg: 1.5rem;
+  --spacing-md: 1rem;
+
+  /* Shadows */
+  --shadow-primary: 0 0 20px rgba(0, 212, 255, 0.4);
+  --shadow-secondary: rgba(0, 212, 255, 0.4);
+
+  /* Z-index */
+  --z-splash: 1000;
+}
