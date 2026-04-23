@@ -1,23 +1,116 @@
-﻿:root {
-  /* Fonts */
-  --font-primary: 
-\Arial\', sans-serif;
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-  /* Colors */
-  --color-dark: #0a0a0a;
-  --color-light: #f5eded;
-  --color-primary: #e0bd1d;
-  --color-gray: #0099ff;
+:root {
+  /* Fonts - Tipografia Moderna */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  /* Colors - Paleta Netflix-like Moderna */
+  --color-light: #ffffff;
+  --color-light-secondary: #e0e0e0;
+  --color-light-tertiary: #f5f5f5;
+  --color-dark: #0f0f0f;
+  --color-dark-bg: #0f0f0f;
+  --color-dark-secondary: #1a1a1a;
+  --color-dark-tertiary: #262626;
+  --color-dark-medium: #404040;
+
+  /* Primary Colors - Laranja Vibrante */
+  --color-primary: #ff6b35;
+  --color-primary-rgb: 255, 107, 53;
+  --color-primary-light: #ff8c5a;
+  --color-primary-dark: #e55a2b;
+
+  /* Secondary Colors - Vermelho Streaming */
+  --color-secondary: #e50914;
+  --color-secondary-rgb: 229, 9, 20;
+  --color-secondary-light: #ff1744;
+  --color-secondary-dark: #c20812;
+
+  /* Accent Colors */
+  --color-accent: #ff6b35;
+  --color-accent-rgb: 255, 107, 53;
+  --color-accent-alt: #00bcd4;
+
+  /* Gray Scale */
+  --color-gray: #808080;
+  --color-gray-light: #cccccc;
+  --color-gray-lighter: #e8e8e8;
+  --color-gray-dark: #404040;
+  --color-gray-darker: #1a1a1a;
+
+  /* Semantic Colors */
+  --color-warning: #ffb300;
+  --color-success: #4caf50;
+  --color-error: #f44336;
+  --color-h1: #ff6b35;
 
   /* Spacing */
-  --spacing-xl: 2rem;
-  --spacing-lg: 1.5rem;
+  --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.5rem;
+  --spacing-3xl: 3rem;
+  --spacing-4xl: 4rem;
 
-  /* Shadows */
-  --shadow-primary: 0 0 20px rgba(0, 212, 255, 0.4);
-  --shadow-secondary: rgba(0, 212, 255, 0.4);
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 50%;
 
-  /* Z-index */
+  /* Shadows - Sistema de Depth */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.4);
+
+  /* Primary Shadows */
+  --shadow-primary: 0 0 20px rgba(var(--color-primary-rgb), 0.4);
+  --shadow-primary-lg: 0 0 30px rgba(var(--color-primary-rgb), 0.6);
+  --shadow-primary-xl: 0 0 40px rgba(var(--color-primary-rgb), 0.8);
+
+  /* Secondary Shadows */
+  --shadow-secondary: 0 0 20px rgba(var(--color-secondary-rgb), 0.4);
+  --shadow-secondary-lg: 0 0 30px rgba(var(--color-secondary-rgb), 0.6);
+
+  /* Glassmorphism */
+  --glass-light: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(0, 0, 0, 0.3);
+  --backdrop-blur: blur(8px);
+  --backdrop-blur-lg: blur(12px);
+  --backdrop-blur-xl: blur(16px);
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Z-index Scale */
   --z-splash: 1000;
+  --z-modal: 900;
+  --z-dropdown: 800;
+  --z-sticky: 100;
+  --z-base: 1;
 }

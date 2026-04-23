@@ -1,4 +1,4 @@
-let avatarSelecionado = "/assets/profile/profile1.jpg";
+let avatarSelecionado = "../assets/profile/profile1.jpg";
 
 // ================= AVATAR SELECTION =================
 const avatarButtons = document.querySelectorAll(".avatar-option");
@@ -55,7 +55,7 @@ if (formPerfil) {
     try {
       localStorage.setItem("perfil", JSON.stringify(perfil));
       // redireciona
-      window.location.href = "/index.html";
+      window.location.href = "../index.html";
     } catch (err) {
       console.error("Erro ao salvar perfil:", err);
     }

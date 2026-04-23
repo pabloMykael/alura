@@ -4,41 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cine+</title>
-  
-  <link rel="shortcut icon" href="/assets/img/logo.png">
-  <link rel="stylesheet" href="/style/home.css">
+
+  <link rel="shortcut icon" href="../assets/img/logo.png">
+  <link rel="stylesheet" href="../style/design-system.css">
+  <link rel="stylesheet" href="../style/home.css">
 </head>
 <body>
 
-  <!-- NAVBAR MODERNA -->
   <header class="navbar" role="banner">
-    <!-- Logo -->
-    <a href="/index.html" class="navbar-logo">
-      <img src="/assets/img/logo.png" alt="Logo Cine+">
+    <a href="../index.html" class="navbar-logo">
+      <img src="../assets/img/logo.png" alt="Logo Cine+">
     </a>
-    
-    <!-- Menu Principal -->
+
     <nav class="navbar-menu" aria-label="Menu principal">
-      <button class="nav-link" data-categoria="popular" aria-label="Ir para Início">
-        <span>Início</span>
+      <button class="nav-link" data-categoria="popular" aria-label="Ir para inicio">
+        <span>Inicio</span>
       </button>
-      <button class="nav-link" data-categoria="top_rated" aria-label="Ver Melhores Avaliados">
+      <button class="nav-link" data-categoria="top_rated" aria-label="Ver melhores avaliados">
         <span>Melhores Avaliados</span>
       </button>
-      <button class="nav-link" data-categoria="upcoming" aria-label="Filmes em Breve">
+      <button class="nav-link" data-categoria="upcoming" aria-label="Filmes em breve">
         <span>Em Breve</span>
       </button>
-      <button class="nav-link" data-categoria="now_playing" aria-label="Filmes em Cartaz">
+      <button class="nav-link" data-categoria="now_playing" aria-label="Filmes em cartaz">
         <span>Em Cartaz</span>
       </button>
-      <button class="nav-link" data-categoria="minhaLista" aria-label="Minha Lista">
+      <button class="nav-link" data-categoria="minhaLista" aria-label="Minha lista">
         <span>Minha Lista</span>
       </button>
     </nav>
 
-    <!-- Ações (Busca + Perfil) -->
     <div class="navbar-actions">
-      <!-- Busca -->
       <div class="search-container">
         <button id="searchIcon" class="search-icon" aria-label="Abrir busca" type="button">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -46,166 +42,200 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
-        <input type="search" id="searchInput" class="search-input" placeholder="Buscar filmes, séries..." aria-label="Buscar conteúdo">
-        <div id="searchResults" class="search-results" role="region" aria-live="polite" aria-label="Resultados da busca"></div>
+        <input
+          type="search"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar filmes, series..."
+          aria-label="Buscar conteudo"
+        >
+        <div
+          id="searchResults"
+          class="search-results"
+          role="region"
+          aria-live="polite"
+          aria-label="Resultados da busca"
+        ></div>
       </div>
 
-      <!-- Menu Perfil -->
       <div class="perfil-menu">
-        <button id="avatarUsuario" class="avatar-button" aria-label="Abrir menu de perfil" aria-expanded="false" aria-controls="dropdown" type="button">
-          <img src="/assets/profile/profile1.jpg" alt="Perfil do usuário">
+        <button
+          id="avatarUsuario"
+          class="avatar-button"
+          aria-label="Abrir menu de perfil"
+          aria-expanded="false"
+          aria-controls="dropdown"
+          type="button"
+        >
+          <img src="../assets/profile/profile1.jpg" alt="Perfil do usuario">
         </button>
+
         <div class="dropdown" id="dropdown" role="menu">
           <div class="dropdown-header">
-            <p id="nomeUsuario">Usuário</p>
+            <p id="nomeUsuario">Usuario</p>
           </div>
           <div class="dropdown-divider"></div>
-          <a href="/paginas/novo-perfil.html" role="menuitem" class="dropdown-item">
-            <span>👤</span> Gerenciar perfis
+          <a href="novo-perfil.html" role="menuitem" class="dropdown-item">
+            <span>Perfis</span> Gerenciar perfis
           </a>
           <a href="#" role="menuitem" class="dropdown-item">
-            <span>⚙️</span> Conta
+            <span>Conta</span> Configuracoes
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" role="menuitem" class="dropdown-item logout-link">
-            <span>🚪</span> Sair
+            <span>Sair</span> Encerrar sessao
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- BANNER HERO CAROUSEL - FULL SCREEN -->
-  <section class="hero-carousel" role="region" aria-label="Carrossel principal de filmes" aria-live="polite">
-    <!-- Background com imagens -->
-    <div class="hero-carousel-background" id="heroCarouselBg"></div>
+  <main class="home-page">
+    <section
+      class="hero-carousel apple-tv-style"
+      role="region"
+      aria-label="Carrossel principal de filmes"
+      aria-live="polite"
+    >
+      <div class="hero-slides-container">
+        <div class="hero-slide active" data-slide="0">
+          <div class="hero-slide-background" id="heroBg0"></div>
+          <div class="hero-slide-overlay"></div>
 
-    <!-- Overlay gradiente -->
-    <div class="hero-carousel-overlay"></div>
+          <div class="hero-slide-content">
+            <div class="hero-badge" id="heroBadge0">DESTAQUE</div>
+            <h1 class="hero-slide-title" id="heroTitle0">Carregando...</h1>
+            <p class="hero-slide-description" id="heroDesc0">Descubra historias incriveis.</p>
 
-    <!-- Conteúdo -->
-    <div class="hero-carousel-content">
-      <!-- Poster à esquerda -->
-      <div class="hero-poster-wrapper">
-        <img id="heroPoster" class="hero-poster" src="" alt="Poster do filme" loading="lazy">
-      </div>
+            <div class="hero-slide-meta">
+              <span class="hero-rating" id="heroRating0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/>
+                </svg>
+                <span>8.5</span>
+              </span>
+              <span class="hero-year" id="heroYear0">2024</span>
+              <span class="hero-duration" id="heroDuration0">2h 30m</span>
+            </div>
 
-      <!-- Informações à direita -->
-      <div class="hero-info">
-        <div class="hero-badge" id="heroBadge">DESTAQUE</div>
-        <h1 id="heroTitle" class="hero-title"></h1>
-        
-        <div class="hero-meta">
-          <span class="hero-rating" id="heroRating">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="12 2 15.09 10.26 24 10.35 17.77 16.01 20.16 24.02 12 18.35 3.84 24.02 6.23 16.01 0 10.35 8.91 10.26"/>
-            </svg>
-            <span id="heroRatingValue">8.5</span>
-          </span>
-          <span class="hero-year" id="heroYear">2024</span>
-          <span class="hero-duration" id="heroDuration">2h 30m</span>
-        </div>
-
-        <p id="heroOverview" class="hero-overview"></p>
-
-        <!-- Botões de ação -->
-        <div class="hero-actions">
-          <button class="hero-btn hero-btn-primary" id="heroBtnPlay" type="button" aria-label="Assistir agora">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="5 3 19 12 5 21"/>
-            </svg>
-            <span>Assistir</span>
-          </button>
-          <button class="hero-btn hero-btn-secondary" id="heroBtnList" type="button" aria-label="Adicionar à minha lista">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-            <span>Minha Lista</span>
-          </button>
+            <div class="hero-slide-actions">
+              <button class="hero-btn-play" aria-label="Assistir agora" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21"/>
+                </svg>
+                <span>Assistir</span>
+              </button>
+              <button class="hero-btn-info" aria-label="Mais informacoes" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>Mais Informacoes</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Controles de navegação -->
-    <button class="hero-nav-btn hero-nav-prev" id="heroPrev" type="button" aria-label="Filme anterior">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button class="hero-nav-btn hero-nav-next" id="heroNext" type="button" aria-label="Próximo filme">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-
-    <!-- Indicadores/Dots -->
-    <div class="hero-indicators" id="heroIndicators" role="tablist" aria-label="Slide indicators"></div>
-
-    <!-- Barra de progresso -->
-    <div class="hero-progress-bar" id="heroProgressBar"></div>
-  </section>
-
-  <!-- Filmes em Destaque -->
-  <section class="row">
-    <h2>Filmes em Destaque</h2>
-    <div class="row-container">
-      <button class="scroll-btn left" data-scroll-target="catalogo" aria-label="Rolar filmes para esquerda" type="button">‹</button>
-      <div class="row-posters" id="catalogo"></div>
-      <button class="scroll-btn right" data-scroll-target="catalogo" aria-label="Rolar filmes para direita" type="button">›</button>
-    </div>
-  </section>
-
-  <!-- Séries em Destaque -->
-  <section class="row">
-    <h2>Séries em Destaque</h2>
-    <div class="row-container">
-      <button class="scroll-btn left" data-scroll-target="catalogo-series" aria-label="Rolar séries para esquerda" type="button">‹</button>
-      <div class="row-posters" id="catalogo-series"></div>
-      <button class="scroll-btn right" data-scroll-target="catalogo-series" aria-label="Rolar séries para direita" type="button">›</button>
-    </div>
-  </section>
-
-  <section>
-    <div class="categorias-wrapper">
-      <h2>Categorias</h2>
-      <div class="categorias-container" id="categorias-container">
-        <button class="cat-btn" data-categoria="filmes" type="button">
-          <img src="/assets/img/filmes.jpg" alt="Filmes">
-          <span>Filmes</span>
+      <div class="hero-nav-arrows">
+        <button class="hero-nav-arrow hero-nav-prev" aria-label="Filme anterior" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
         </button>
-        <button class="cat-btn" data-categoria="series" type="button">
-          <img src="/assets/img/series.webp" alt="Séries">
-          <span>Séries</span>
-        </button>
-        <button class="cat-btn" data-categoria="animes" type="button">
-          <img src="/assets/img/animes.jpg" alt="Animes">
-          <span>Animes</span>
-        </button>
-        <button class="cat-btn" data-categoria="infantil" type="button">
-          <img src="/assets/img/infantil.jpg" alt="Infantil">
-          <span>Infantil</span>
-        </button>
-        <button class="cat-btn" data-categoria="nacionais" type="button">
-          <img src="/assets/img/nacionais.webp" alt="Nacionais">
-          <span>Nacionais</span>
-        </button>
-        <button class="cat-btn" data-categoria="reality" type="button">
-          <img src="/assets/img/reality.jpg" alt="Reality">
-          <span>Reality</span>
-        </button>
-        <button class="cat-btn" data-categoria="futebol" type="button">
-          <img src="/assets/img/futebol.webp" alt="Futebol">
-          <span>Futebol</span>
+        <button class="hero-nav-arrow hero-nav-next" aria-label="Proximo filme" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
         </button>
       </div>
-      <button class="cat-scroll left" data-scroll="categorias" aria-label="Rolar categorias para esquerda" type="button">❮</button>
-      <button class="cat-scroll right" data-scroll="categorias" aria-label="Rolar categorias para direita" type="button">❯</button>
+
+      <div class="hero-indicators" id="heroIndicators" role="tablist" aria-label="Indicadores de slide"></div>
+    </section>
+
+    <div class="home-content">
+      <section class="row" aria-labelledby="filmes-destaque-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Selecao do dia</p>
+            <h2 id="filmes-destaque-title">Filmes em Destaque</h2>
+          </div>
+          <p class="section-description">Os titulos mais populares para comecar sua maratona.</p>
+        </div>
+
+        <div class="row-container">
+          <button class="scroll-btn left" data-scroll-target="catalogo" aria-label="Rolar filmes para esquerda" type="button">&#8249;</button>
+          <div class="row-posters" id="catalogo"></div>
+          <button class="scroll-btn right" data-scroll-target="catalogo" aria-label="Rolar filmes para direita" type="button">&#8250;</button>
+        </div>
+      </section>
+
+      <section class="row" aria-labelledby="series-destaque-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Para continuar assistindo</p>
+            <h2 id="series-destaque-title">Series em Destaque</h2>
+          </div>
+          <p class="section-description">Uma fileira separada para encontrar episodios e novidades mais rapido.</p>
+        </div>
+
+        <div class="row-container">
+          <button class="scroll-btn left" data-scroll-target="catalogo-series" aria-label="Rolar series para esquerda" type="button">&#8249;</button>
+          <div class="row-posters" id="catalogo-series"></div>
+          <button class="scroll-btn right" data-scroll-target="catalogo-series" aria-label="Rolar series para direita" type="button">&#8250;</button>
+        </div>
+      </section>
+
+      <section class="row row-categories" aria-labelledby="categorias-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Explore por universo</p>
+            <h2 id="categorias-title">Categorias</h2>
+          </div>
+          <p class="section-description">Uma navegacao visual para trocar de clima sem perder tempo.</p>
+        </div>
+
+        <div class="categorias-wrapper">
+          <div class="categorias-container" id="categorias-container">
+            <button class="cat-btn" data-categoria="filmes" type="button">
+              <img src="../assets/img/filmes.jpg" alt="Filmes">
+              <span>Filmes</span>
+            </button>
+            <button class="cat-btn" data-categoria="series" type="button">
+              <img src="../assets/img/series.webp" alt="Series">
+              <span>Series</span>
+            </button>
+            <button class="cat-btn" data-categoria="animes" type="button">
+              <img src="../assets/img/animes.jpg" alt="Animes">
+              <span>Animes</span>
+            </button>
+            <button class="cat-btn" data-categoria="infantil" type="button">
+              <img src="../assets/img/infantil.jpg" alt="Infantil">
+              <span>Infantil</span>
+            </button>
+            <button class="cat-btn" data-categoria="nacionais" type="button">
+              <img src="../assets/img/nacionais.webp" alt="Nacionais">
+              <span>Nacionais</span>
+            </button>
+            <button class="cat-btn" data-categoria="reality" type="button">
+              <img src="../assets/img/reality.jpg" alt="Reality">
+              <span>Reality</span>
+            </button>
+            <button class="cat-btn" data-categoria="futebol" type="button">
+              <img src="../assets/img/futebol.webp" alt="Futebol">
+              <span>Futebol</span>
+            </button>
+          </div>
+
+          <button class="cat-scroll left" data-scroll="categorias" aria-label="Rolar categorias para esquerda" type="button">&#10094;</button>
+          <button class="cat-scroll right" data-scroll="categorias" aria-label="Rolar categorias para direita" type="button">&#10095;</button>
+        </div>
+      </section>
     </div>
-  </section>
+  </main>
 
-  <!-- O resto das seções (categorias, planos, etc.) podem vir aqui -->
-
-  <script src="/Javascript/javascript.js"></script>
+  <script src="../Javascript/hero-carousel.js"></script>
+  <script src="../Javascript/javascript.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap');
 @import url('./design-system.css');
 
 /* ================= PÁGINA DE PERFIS ================= */
@@ -6,9 +6,7 @@
 /* BODY */
 body {
   min-height: 100vh;
-  background: linear-gradient(45deg, var(--color-dark), #f0f0f0, var(--color-dark));
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
+  background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-secondary) 50%, var(--color-dark-tertiary) 100%);
   font-family: var(--font-primary);
   color: var(--color-light);
   margin: 0;
@@ -21,14 +19,25 @@ body {
 
 /* ANIMAÇÕES */
 @keyframes gradientMove {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes zoomBg {
-from { transform: scale(1); }
-to { transform: scale(1.1); }
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* SPLASH */
@@ -38,7 +47,7 @@ to { transform: scale(1.1); }
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--color-dark);
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-secondary) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,30 +59,30 @@ to { transform: scale(1.1); }
   width: 300px;
   max-width: 80%;
   animation: zoomLogo 2s ease;
-  filter: drop-shadow(0 0 30px var(--shadow-secondary));
+  filter: drop-shadow(0 0 30px var(--color-primary));
 }
 
 @keyframes zoomLogo {
   0% {
     transform: scale(0.7);
     opacity: 0;
-    filter: drop-shadow(0 0 10px var(--shadow-primary));
+    filter: drop-shadow(0 0 10px var(--color-primary));
   }
   50% {
     transform: scale(1.15);
-    filter: drop-shadow(0 0 40px var(--shadow-primary));
+    filter: drop-shadow(0 0 40px var(--color-primary));
   }
   100% {
     transform: scale(1);
-    filter: drop-shadow(0 0 30px var(--shadow-secondary));
+    filter: drop-shadow(0 0 30px var(--color-primary));
   }
 }
 
 @keyframes fadeOut {
-to {
-opacity: 0;
-visibility: hidden;
-}
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* PROFILE SELECTION */
@@ -82,6 +91,7 @@ visibility: hidden;
   padding: var(--spacing-xl);
   max-width: 1200px;
   width: 100%;
+  animation: slideInDown 0.8s ease;
 }
 
 .header {
@@ -91,48 +101,56 @@ visibility: hidden;
 .logo img {
   width: 200px;
   margin-bottom: var(--spacing-lg);
-  filter: brightness(0.9);
+  filter: drop-shadow(0 4px 20px var(--color-primary));
+  transition: all var(--transition-base);
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 30px var(--color-primary));
 }
 
 h1 {
   font-size: 3rem;
   color: var(--color-light);
   margin: 0;
-  font-weight: 300;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: var(--font-weight-extrabold);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  letter-spacing: -1px;
 }
 
 /* LOGO */
 .logo {
-margin-bottom: 20px;
-animation: fadeIn 1.5s ease;
-text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+  text-align: center;
 }
 
 .logo img {
-width: 400px;
-max-width: 80%;
-filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+  width: 400px;
+  max-width: 80%;
+  filter: drop-shadow(0 0 30px var(--color-primary));
 }
 
 @keyframes fadeIn {
-from {
-opacity: 0;
-transform: scale(0.8);
-}
-to {
-opacity: 1;
-transform: scale(1);
-}
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* TÍTULO */
 h1 {
-font-size: 2.5rem;
-margin-bottom: 30px;
-font-family: "Contrail One", sans-serif;
-text-align: center;
-color: var(--color-h1);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-family: var(--font-primary);
+  text-align: center;
+  color: var(--color-h1);
+  font-weight: var(--font-weight-extrabold);
 }
 
 /* PROFILES SECTION */
@@ -149,75 +167,95 @@ color: var(--color-h1);
 
 .profile-item {
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .profile-item a {
   text-decoration: none;
   color: var(--color-light);
   display: block;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .profile-avatar {
   width: 150px;
   height: 150px;
   margin: 0 auto var(--spacing-md);
-  border-radius: 50%;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  border: 3px solid transparent;
-  transition: all 0.3s ease;
+  border: 3px solid rgba(var(--color-primary-rgb), 0.3);
+  transition: all var(--transition-base);
   position: relative;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--color-dark-secondary), var(--color-dark-tertiary));
 }
 
 .profile-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .profile-item:hover .profile-avatar {
-  border-color: var(--color-h1);
-  box-shadow: var(--shadow-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 30px var(--shadow-primary-lg), inset 0 0 20px rgba(var(--color-primary-rgb), 0.2);
   transform: scale(1.1);
 }
 
 .profile-item:hover .profile-avatar img {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: brightness(1.1);
 }
 
 .profile-name {
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: var(--font-weight-semibold);
   display: block;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
+  color: var(--color-light);
+  letter-spacing: 0.5px;
 }
 
 .profile-item:hover .profile-name {
-  color: var(--color-h1);
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.5);
 }
 
 /* ADD PROFILE */
 .add-profile .profile-avatar {
   border-style: dashed;
-  border-color: var(--color-gray);
-  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(var(--color-primary-rgb), 0.5);
+  background: rgba(var(--color-primary-rgb), 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all var(--transition-base);
 }
 
 .add-profile .profile-avatar img {
   width: 60px;
   height: 60px;
-  opacity: 0.7;
+  opacity: 0.6;
+  transition: all var(--transition-base);
 }
 
 .add-profile:hover .profile-avatar {
-  border-color: var(--color-h1);
-  box-shadow: var(--shadow-primary);
-  background: rgba(255, 102, 0, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 30px var(--shadow-primary-lg), inset 0 0 20px rgba(var(--color-primary-rgb), 0.15);
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border-style: solid;
+}
+
+.add-profile:hover .profile-avatar img {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.add-profile:hover .profile-name {
+  color: var(--color-primary);
+  text-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.5);
 }
 
 /* TRANSIÇÃO AO ENTRAR */
@@ -227,12 +265,10 @@ color: var(--color-h1);
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-light);
-
+  background: var(--color-dark);
   opacity: 0;
   pointer-events: none;
   z-index: 9998;
-
   transition: opacity 0.6s ease;
 }
 
@@ -312,5 +348,25 @@ color: var(--color-h1);
 
   .logo img {
     width: 120px;
+  }
+}
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .profile-selection {
+    max-width: 1600px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .profiles-list {
+    gap: var(--spacing-3xl);
+  }
+
+  .profile-avatar {
+    width: 180px;
+    height: 180px;
   }
 }

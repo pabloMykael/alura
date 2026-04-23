@@ -1,7 +1,9 @@
+@import url('./design-system.css');
+
 body {
-background: #141414;
-color: #fff;
-font-family: Arial, sans-serif;
+background: var(--color-light);
+color: var(--color-dark);
+font-family: var(--font-primary);
 
 display: flex;
 justify-content: center;
@@ -15,6 +17,8 @@ text-align: center;
 
 h1 {
 margin-bottom: 20px;
+color: var(--color-h1);
+font-size: var(--font-size-3xl);
 }
 
 /* PREVIEW */
@@ -29,10 +33,19 @@ margin-bottom: 20px;
 input {
 padding: 10px;
 width: 250px;
-border: none;
+border: 2px solid var(--color-gray-light);
 outline: none;
 border-radius: 4px;
 margin-bottom: 20px;
+background: var(--color-light);
+color: var(--color-dark);
+font-family: var(--font-primary);
+transition: all var(--transition-base);
+}
+
+input:focus {
+border-color: var(--color-primary);
+box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.2);
 }
 
 /* AVATARS */
@@ -41,6 +54,12 @@ display: flex;
 gap: 10px;
 justify-content: center;
 margin-bottom: 20px;
+}
+
+.avatar-option {
+background: transparent;
+border: none;
+padding: 0;
 }
 
 .avatars img {
@@ -58,8 +77,14 @@ transform: scale(1.1);
 }
 
 .avatars img.selected {
-border: 3px solid #fff;
+border: 3px solid var(--color-primary);
 opacity: 1;
+}
+
+.avatar-option.selected img {
+border: 3px solid var(--color-primary);
+opacity: 1;
+box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.15);
 }
 
 /* BOTÕES */
@@ -72,16 +97,105 @@ justify-content: center;
 button {
 padding: 10px 20px;
 border: none;
-background: #e50914;
-color: #fff;
+background: var(--color-primary);
+color: var(--color-light);
 cursor: pointer;
 border-radius: 4px;
+font-family: var(--font-primary);
+font-weight: var(--font-weight-semibold);
+transition: all var(--transition-base);
+box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
+}
+
+button:hover {
+background: var(--color-primary-dark);
+transform: translateY(-1px);
+box-shadow: 0 4px 12px rgba(var(--color-primary-rgb), 0.4);
 }
 
 .cancelar {
 padding: 10px 20px;
-background: #555;
+background: var(--color-gray);
 text-decoration: none;
-color: #fff;
+color: var(--color-light);
 border-radius: 4px;
+font-family: var(--font-primary);
+font-weight: var(--font-weight-semibold);
+transition: all var(--transition-base);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancelar:hover {
+background: var(--color-dark-secondary);
+transform: translateY(-1px);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input {
+    width: 200px;
+  }
+
+  .avatars {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 180px;
+  }
+
+  .avatars img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button, .cancelar {
+    width: 150px;
+    text-align: center;
+  }
+}
+
+/* Desktop Grande */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 600px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  input {
+    width: 300px;
+  }
+
+  .avatars {
+    gap: 15px;
+  }
+
+  .avatars img {
+    width: 80px;
+    height: 80px;
+  }
 }
